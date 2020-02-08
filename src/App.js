@@ -14,7 +14,7 @@ function App() {
       <Layout>
         <Switch>
           <Route path="/" exact render={() => <Home />} />
-          {/* <Route path="/category" exact render={() => <Categories />} />
+          <Route path="/category" exact render={() => <Categories />} />
           <Route
             path="/cards"
             exact
@@ -29,7 +29,7 @@ function App() {
             path="/card-advisor"
             exact
             render={props => <CardAdvisor {...props} />}
-          /> */}
+          />
           <Route render={props => <NotFound {...props} />} />
         </Switch>
       </Layout>
