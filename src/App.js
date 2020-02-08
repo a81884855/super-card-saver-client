@@ -12,14 +12,26 @@ function App() {
   return (
     <Router>
       <Layout>
-        {/* <Switch>
+        <Switch>
           <Route path="/" exact render={() => <Home />} />
           <Route path="/category" exact render={() => <Categories />} />
-          <Route path="/cards" exact render={props => <AllCards {...props} />} />
-          <Route path="/calculator" exact render={props => <Calculator {...props} />} />
-          <Route path="/card-advisor" exact render={props => <CardAdvisor {...props} />} />
+          <Route
+            path="/cards"
+            exact
+            render={props => <AllCards {...props} />}
+          />
+          <Route
+            path="/calculator"
+            exact
+            render={props => <Calculator {...props} />}
+          />
+          <Route
+            path="/card-advisor"
+            exact
+            render={props => <CardAdvisor {...props} />}
+          />
           <Route render={props => <NotFound {...props} />} />
-        </Switch> */}
+        </Switch>
       </Layout>
     </Router>
   );

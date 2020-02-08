@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { graphql } from 'react-apollo';
-import { getCardsQuery } from '../queries/queries.js';
-import { Helmet } from 'react-helmet';
-import { Col, Row, Image, Modal, Button, Container } from 'react-bootstrap';
-import CardDetail from './Category/CardDetail';
-import 'animate.css/animate.min.css';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import React, { Component } from "react";
+import { graphql } from "react-apollo";
+import { getCardsQuery } from "../queries/queries.js";
+import { Helmet } from "react-helmet";
+import { Col, Row, Image, Modal, Button, Container } from "react-bootstrap";
+import CardDetail from "./Category/CardDetail";
+import "animate.css/animate.min.css";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const head = () => {
   return (
-    <Helmet bodyAttributes={{ class: 'allCardsPage' }}>
+    <Helmet bodyAttributes={{ class: "allCardsPage" }}>
       <title>All Cards</title>
     </Helmet>
   );
@@ -20,8 +20,8 @@ export class CardList extends Component {
     super(props);
     this.state = {
       show: false,
-      name: '',
-      website: ''
+      name: "",
+      website: ""
     };
     this.handleShow = this.handleShow.bind(this);
   }
@@ -49,7 +49,7 @@ export class CardList extends Component {
   render() {
     const { show, name, website } = this.state;
     return (
-      <Container style={{ margin: '1rem auto', minHeight: '100vh' }}>
+      <Container style={{ margin: "1rem auto", minHeight: "100vh" }}>
         <Modal
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
@@ -64,7 +64,10 @@ export class CardList extends Component {
             <CardDetail name={name} />
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={() => this.setState({ show: false })}>
+            <Button
+              variant="secondary"
+              onClick={() => this.setState({ show: false })}
+            >
               Close
             </Button>
             <Button variant="primary" href={website}>
@@ -110,20 +113,20 @@ export class Card extends Component {
         md={6}
         lg={4}
         key={card.id}
-        style={{ marginBottom: '15px' }}
+        style={{ marginBottom: "15px" }}
         onClick={() => this.props.handleShow(card.name, card.website)}
       >
         <Image
           src={`/images/${card.image}`}
           style={{
-            width: '100%',
-            border: 'none'
+            width: "100%",
+            border: "none"
           }}
           onMouseEnter={this.toggleHover}
-          className={hovered ? 'flipInX animated' : ''}
+          className={hovered ? "flipInX animated" : ""}
           thumbnail
         />
-        <p style={{ textAlign: 'center' }}>{card.name}</p>
+        <p style={{ textAlign: "center" }}>{card.name}</p>
       </Col>
     );
   }
